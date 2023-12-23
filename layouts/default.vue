@@ -8,7 +8,6 @@
       app
     >
       <button @click="toHome()">
-        <!-- <v-toolbar-title class="nav-title main-font main-white">{{ title }}</v-toolbar-title> -->
         <img class="logo" src="~/assets/images/logo.png" />
       </button>
       <v-spacer />
@@ -81,7 +80,7 @@ export default {
 
 .nav-btns {
   text-decoration: none;
-  margin-left: 5px;
+  margin-left: 5px !important;
   padding: 2px 10px;
   border-radius: 4px;
   font-size: 18px;
@@ -89,7 +88,7 @@ export default {
   
   &&:hover {
     opacity: 0.7;
-    background-color: #9a9a9a;
+    background-color: #dbd3d3;
   }
 }
 
