@@ -14,6 +14,8 @@
                     <img class="picture-card-img-even" :src="item.image" />
                 </div>
                 <div :class="isEven(i) ? 'picture-card-text-even text-font main-white' : 'picture-card-text-odd text-font main-white'">
+                    <span v-if="item.title">{{ item.title }}<br></span>
+                    <span v-if="item.subtitle">{{ item.subtitle }}<br><br></span>
                     <span>{{ item.text }}</span>
                 </div>
                 <div class="centered" v-if="!isEven(i) && windowWidth > 600">

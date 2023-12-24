@@ -81,9 +81,7 @@
               :key="i"
             >
               <v-expansion-panel-header>
-                <span style="width: 90%;">{{ item.title }}</span>
-                <v-spacer />
-                <span>{{ item.year }}</span>
+                <span>{{ item.title }}</span>
               </v-expansion-panel-header>
               <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
             </v-expansion-panel>
@@ -106,9 +104,7 @@
               :key="i"
             >
               <v-expansion-panel-header>
-                <span style="width: 90%;">{{ item.title }}</span>
-                <v-spacer />
-                <span>{{ item.year }}</span>
+                <span>{{ item.title }}</span>
               </v-expansion-panel-header>
               <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
             </v-expansion-panel>
