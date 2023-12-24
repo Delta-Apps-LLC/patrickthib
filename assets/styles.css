@@ -61,3 +61,11 @@
     padding: 50px 0 15px 0 !important;
 }
 
+.mini-header {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+    letter-spacing: 1.5px;
+    font-size: 18px !important;
+    padding: 0 0 15px 0 !important;
+    font-style: italic;
+}
+

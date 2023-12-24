@@ -14,7 +14,7 @@
         data-aos="zoom-in"
         data-aos-duration="1000"
       >
-        {{ awardsTitle }}
+        Awards and Achievements
       </span>
 
       <v-expansion-panels class="expand-group main-white text-font"
@@ -56,6 +56,67 @@
       ></iframe>
     </div>
 
+    <div class="centered">
+      <span class="small-header main-white text-center"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+      >
+        Engagement and Involvement
+      </span>
+      <v-row style="margin-bottom: 60px;">
+        <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
+          <span class="mini-header main-white text-center"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            Memberships
+          </span>
+          <v-expansion-panels class="expand-group main-white text-font"
+            data-aos="fade-in"
+            data-aos-duration="2500"
+            :style="windowWidth <= 700 ? {'margin-bottom': '20px'} : null"
+          >
+            <v-expansion-panel
+              v-for="(item, i) in memberships"
+              :key="i"
+            >
+              <v-expansion-panel-header>
+                <span style="width: 90%;">{{ item.title }}</span>
+                <v-spacer />
+                <span>{{ item.year }}</span>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-col>
+
+        <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
+          <span class="mini-header main-white text-center"
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+          >
+            Conferences
+          </span>
+          <v-expansion-panels class="expand-group main-white text-font"
+            data-aos="fade-in"
+            data-aos-duration="2500"
+          >
+            <v-expansion-panel
+              v-for="(item, i) in conferences"
+              :key="i"
+            >
+              <v-expansion-panel-header>
+                <span style="width: 90%;">{{ item.title }}</span>
+                <v-spacer />
+                <span>{{ item.year }}</span>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+        </v-col>
+      </v-row>
+    </div>
+
   </div>
 </template>
 
@@ -87,7 +148,6 @@ export default {
         },
       ],
       tagline: 'Sustainable Spaces, Endless Possibilities',
-      awardsTitle: 'Awards and Achievements',
       awardsAchievements: [
         {
           title: 'Environmental Leader 75',
@@ -126,6 +186,58 @@ export default {
         },
       ],
       tedTalkURL: 'https://www.youtube.com/embed/edmrxrdDePQ?si=JIS9tDKbKdcgxltg',
+      memberships: [
+        {
+          title: 'USGBC National - Firm',
+          details: '',
+        },
+        {
+          title: 'USGBC Local Chapter',
+          details: '',
+        },
+        {
+          title: 'Internal Living Futures Institute',
+          details: '',
+        },
+        {
+          title: 'UC Berkley Center for the Built Environment',
+          details: '',
+        },
+        {
+          title: 'Design Futures Council',
+          details: '',
+        },
+        {
+          title: 'AIA Large Firm Round Table',
+          details: '',
+        },
+      ],
+      conferences: [
+        {
+          title: 'Greenbuild',
+          details: '',
+        },
+        {
+          title: 'Living Futures Conference',
+          details: '',
+        },
+        {
+          title: 'DFC Sustainability Summitt',
+          details: '',
+        },
+        {
+          title: 'Net Zero Sumitt - Michigan',
+          details: '',
+        },
+        {
+          title: 'Carbon Positive or other',
+          details: '',
+        },
+        {
+          title: 'LFRT SDL meeting',
+          details: '',
+        },
+      ],
       windowWidth: window.innerWidth,
     }
   },

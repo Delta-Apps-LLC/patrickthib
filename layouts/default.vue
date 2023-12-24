@@ -81,7 +81,7 @@ export default {
 .nav-btns {
   text-decoration: none;
   margin-left: 5px !important;
-  padding: 2px 10px;
+  padding: 4px 12px !important;
   border-radius: 4px;
   font-size: 18px;
   margin: auto;
