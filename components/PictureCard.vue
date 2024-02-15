@@ -10,13 +10,29 @@
                 data-aos="fade-in"
                 data-aos-duration="3000"
             >
-                <div class="centered" v-if="isEven(i) || windowWidth <= 600">
+                <div :class="isHome && viewMore ? 'topped' : 'centered'" v-if="isEven(i) || windowWidth <= 600">
                     <img class="picture-card-img-even" :src="item.image" />
                 </div>
                 <div :class="isEven(i) ? 'picture-card-text-even text-font main-white' : 'picture-card-text-odd text-font main-white'">
                     <span v-if="item.title">{{ item.title }}<br></span>
                     <span v-if="item.subtitle">{{ item.subtitle }}<br><br></span>
                     <span>{{ item.text }}</span>
+
+                    <div v-if="isHome"
+                        style="margin-top: 20px;"
+                    >
+                        <div style="display: flex; justify-content: right !important;">
+                            <v-btn class="main-font"
+                                @click="viewMore = !viewMore"
+                                text
+                            >
+                                {{ viewMore ? 'Hide' : 'Read More' }}
+                            </v-btn>
+                        </div>
+                        <div v-if="viewMore" style="width: 100%; margin: 20px 0 !important; display: flex; justify-content: left !important;">
+                            <AboutMe />
+                        </div>
+                    </div>
                 </div>
                 <div class="centered" v-if="!isEven(i) && windowWidth > 600">
                     <img class="picture-card-img-odd" :src="item.image" />
@@ -29,6 +45,8 @@
 <script>
 import AOS from 'aos'
 import 'aos/dist/aos.css';
+import AboutMe from '~/components/AboutMe.vue'
+
 export default {
     name: 'PictureCardComponent',
 
@@ -39,8 +57,13 @@ export default {
         AOS.init()
     },
 
+    components: {
+        AboutMe
+    },
+
     data () {
         return {
+            viewMore: false,
             windowWidth: window.innerWidth,
         }
     },
@@ -52,6 +75,12 @@ export default {
     methods: {
         isEven(i) {
             return i == 0 || i % 2 == 0
+        }
+    },
+
+    computed: {
+        isHome () {
+            return this.$route.name == 'index'
         }
     }
 }

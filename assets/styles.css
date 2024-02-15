@@ -36,6 +36,12 @@
     justify-content: center;
 }
 
+.topped {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
 @media (max-width: 500px) {
     .header {
         font-size: 30px !important;

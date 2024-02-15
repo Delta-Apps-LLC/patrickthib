@@ -4,24 +4,14 @@
             <SectionHeader title="Engagement and Involvement" />
             <v-row style="margin-bottom: 20px;">
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
-                    <span class="mini-header main-white text-center"
-                        data-aos="zoom-in"
-                        data-aos-duration="1000"
-                    >
-                        Memberships
-                    </span>
+                    <MiniHeader title="Memberships" />
                     <Dropdown :items="memberships"
                         :style="windowWidth <= 700 ? {'margin-bottom': '20px'} : null"
                     />
                 </v-col>
 
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
-                    <span class="mini-header main-white text-center"
-                        data-aos="zoom-in"
-                        data-aos-duration="1000"
-                    >
-                        Conferences
-                    </span>
+                    <MiniHeader title="Conferences" />
                     <Dropdown :items="conferences" />
                 </v-col>
             </v-row>
@@ -36,6 +26,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Dropdown from '~/components/Dropdown.vue'
 import SectionHeader from '~/components/SectionHeader.vue'
+import MiniHeader from '~/components/MiniHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
 
 export default {
@@ -51,6 +42,7 @@ export default {
     components: {
         Dropdown,
         SectionHeader,
+        MiniHeader,
         BottomBuffer
     },
 
