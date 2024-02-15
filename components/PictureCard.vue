@@ -61,7 +61,7 @@ export default {
 @import '~/assets/styles.css';
 
 .picture-card-row {
-    margin: 20px 0 40px 0;
+    margin: 20px 0 20px 0;
 }
 
 .picture-card-even, .picture-card-odd {

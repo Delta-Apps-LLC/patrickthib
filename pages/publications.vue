@@ -1,6 +1,6 @@
 <template>
   <div>
-    Projects Page
+    Publications Page
 
     <SectionHeader title="Use The Links At The Top To Learn More" />
     <BottomBuffer />
@@ -14,7 +14,7 @@ import SectionHeader from '~/components/SectionHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
 
 export default {
-  name: 'ProjectsPage',
+  name: 'PublicationsPage',
 
   created () {
     window.addEventListener('resize', () => {
