@@ -23,14 +23,26 @@
                     >
                         <div style="display: flex; justify-content: right !important;">
                             <v-btn class="main-font"
-                                @click="viewMore = !viewMore"
+                                id="showMoreButton"
+                                @click="showMore()"
                                 text
                             >
-                                {{ viewMore ? 'Hide' : 'Read More' }}
+                                {{ viewMore ? 'See Less' : 'See More' }}
                             </v-btn>
                         </div>
-                        <div v-if="viewMore" style="width: 100%; margin: 20px 0 !important; display: flex; justify-content: left !important;">
+                        <div v-if="viewMore"
+                            id="aboutMeSection"
+                            style="width: 100%; margin: 20px 0 !important; display: flex; justify-content: left !important;"
+                        >
                             <AboutMe />
+                        </div>
+                        <div v-if="viewMore" style="display: flex; justify-content: right !important;">
+                            <v-btn class="main-font"
+                                @click="showMore()"
+                                text
+                            >
+                                See Less
+                            </v-btn>
                         </div>
                     </div>
                 </div>
@@ -75,7 +87,30 @@ export default {
     methods: {
         isEven(i) {
             return i == 0 || i % 2 == 0
-        }
+        },
+
+        showMore() {
+            this.viewMore = !this.viewMore
+            if (this.viewMore) {
+                this.$nextTick(() => {
+                    const aboutMeElement = document.getElementById('aboutMeSection');
+                    const offsetTop = aboutMeElement.offsetTop;
+    
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth',
+                    });
+                })
+            } else {
+                const buttonElement = document.getElementById('showMoreButton');
+                const offsetTop = buttonElement.offsetTop;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        },
     },
 
     computed: {

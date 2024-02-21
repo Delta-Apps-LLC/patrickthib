@@ -2,7 +2,12 @@
     <div>
         <v-divider />
         <MiniHeader title="Summary of Qualifications" />
-        <span class="picture-card-text-even text-font main-white">{{ summary }}</span>
+        <span class="picture-card-text-even text-font main-white"
+            data-aos="fade-in"
+            data-aos-duration="3000"
+        >
+            {{ summary }}
+        </span>
         <ul>
             <li v-for="(item, i) in summaryPoints">{{ item }}</li>
         </ul>
