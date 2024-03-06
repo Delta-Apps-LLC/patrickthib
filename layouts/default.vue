@@ -11,8 +11,9 @@
         <img class="logo" src="~/assets/images/logo.png" />
       </button>
       <v-spacer />
+
       <div v-if="windowWidth >= 950"
-        style="display: flex; margin: auto;"
+        style="display: flex; margin: auto 0; flex-wrap: wrap;"
       >
         <nuxt-link class="nav-btns main-font main-black"
           :class="btn.to == currentPage ? 'selected' : null"
@@ -59,6 +60,8 @@
     >
       <span>&copy; 2023</span>
       <v-spacer />
+      <a target="_blank" href="resume.pdf">Full Resume</a>
+      <div style="margin-right: 10px;"></div>
       <a id="linkedin-logo" :href="linkedinURL">
         <v-icon size="35">mdi-linkedin</v-icon>
       </a>
@@ -106,6 +109,10 @@ export default {
         {
           title: 'Publications',
           to: '/publications'
+        },
+        {
+          title: 'Recommendations',
+          to: '/recommendations'
         },
       ],
       title: 'Patrick Thibaudeau',

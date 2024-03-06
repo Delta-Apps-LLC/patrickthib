@@ -1,6 +1,7 @@
 <template>
   <div>
     <SectionHeader :title="tagline" />
+    <BottomBuffer style="margin-bottom: 40px;" />
     <PictureCard :items="introPictureCards" />
 
     <div class="centered">
@@ -54,7 +55,7 @@ export default {
           image: '/images/profile.jpg',
         },
       ],
-      tagline: 'Foresight into the Future, Doing what Can\'t be Done',
+      tagline: 'Foresight Into the Future, Doing What Can\'t be Done',
       tedTalkURL: 'https://www.youtube.com/embed/edmrxrdDePQ?si=JIS9tDKbKdcgxltg',
       windowWidth: window.innerWidth,
     }
