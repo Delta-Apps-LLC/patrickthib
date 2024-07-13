@@ -60,7 +60,7 @@
     >
       <span>&copy; 2023</span>
       <v-spacer />
-      <a target="_blank" href="resume.pdf">Full Resume</a>
+      <!-- <a target="_blank" href="resume.pdf">Full Resume</a> -->
       <div style="margin-right: 10px;"></div>
       <a id="linkedin-logo" :href="linkedinURL">
         <v-icon size="35">mdi-linkedin</v-icon>
