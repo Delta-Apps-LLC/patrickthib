@@ -3,7 +3,6 @@
     <div class="centered">
       <SectionHeader title="Presentations" />
       <Dropdown :items="presentations" />
-      <!-- <Info :items="presentations" /> -->
     </div>
 
     <SectionHeader title="Use The Links At The Top To Learn More" />
@@ -15,7 +14,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Dropdown from '~/components/Dropdown.vue'
-import Info from '~/components/Info.vue';
 import SectionHeader from '~/components/SectionHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
 
@@ -31,7 +29,6 @@ export default {
 
   components: {
     Dropdown,
-    Info,
     SectionHeader,
     BottomBuffer
   },

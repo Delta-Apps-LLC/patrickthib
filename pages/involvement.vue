@@ -8,15 +8,11 @@
                     <Dropdown :items="memberships"
                         :style="windowWidth <= 700 ? {'margin-bottom': '20px'} : null"
                     />
-                    <!-- <Info :items="memberships"
-                        :style="windowWidth <= 700 ? {'margin-bottom': '20px'} : null"
-                    /> -->
                 </v-col>
 
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
                     <MiniHeader title="Conferences" />
                     <Dropdown :items="conferences" />
-                    <!-- <Info :items="conferences" /> -->
                 </v-col>
             </v-row>
         </div>
@@ -29,7 +25,6 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css';
 import Dropdown from '~/components/Dropdown.vue'
-import Info from '~/components/Info.vue';
 import SectionHeader from '~/components/SectionHeader.vue'
 import MiniHeader from '~/components/MiniHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
@@ -46,7 +41,6 @@ export default {
 
     components: {
         Dropdown,
-        Info,
         SectionHeader,
         MiniHeader,
         BottomBuffer
