@@ -30,7 +30,7 @@
       hover
     >
       <v-expansion-panel
-        v-for="(item, i) in displayedItems"
+        v-for="(item, i) in properList"
         :key="i"
       >
         <v-expansion-panel-header>
@@ -39,7 +39,7 @@
           </span>
           <span style="width: 85%;" v-else>{{ item.title }}</span>
           <v-spacer />
-          <span>{{ item.year?.join(', ') }}</span>
+          <span>{{ item.year?.join(', ') }}{{ item.duration }}</span>
         </v-expansion-panel-header>
         <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
       </v-expansion-panel>
@@ -48,10 +48,11 @@
     <v-btn class="load-more-btn main-font"
       @click="loadMoreItems"
       text
-      :disabled="displayedItems.length == items.length"
+      :disabled="properList.length === items.length"
     >Load More...</v-btn>
   </div>
 </template>
+
 
 <script>
 import AOS from 'aos'
@@ -71,10 +72,11 @@ export default {
       expandedPanels: [],
       expanded: false,
       filterItems: [
+        { value: 0, text: 'Reset' },
         { value: 1, text: 'Alphabetical' },
         { value: 2, text: 'Date' },
       ],
-      selected: null,
+      selected: 0,
       itemsToDisplay: 10,
       windowWidth: window.innerWidth,
     }
@@ -85,21 +87,23 @@ export default {
   },
 
   watch: {
-    selected (oldValue, newValue) {
-      if (oldValue === 1) {
-        this.items = this.items.sort((a, b) => {
-          const titleA = a.title.toUpperCase();
-          const titleB = b.title.toUpperCase();
-          if (titleA < titleB) {
-            return -1;
-          }
-          if (titleA > titleB) {
-            return 1;
-          }
-          return 0;
-        });
-      } else if (oldValue === 2) {
-        this.items = this.items.sort((a, b) => b.year[0] - a.year[0]);
+    selected(newValue) {
+      if (newValue === 0) {
+        this.properList = this.items.slice(0, this.itemsToDisplay);
+      } else if (newValue === 1) {
+        this.properList = this.alphabeticalOrder;
+      } else if (newValue === 2) {
+        this.properList = this.dateOrder;
+      }
+    },
+
+    itemsToDisplay() {
+      if (this.selected === 0) {
+        this.properList = this.items.slice(0, this.itemsToDisplay);
+      } else if (this.selected === 1) {
+        this.properList = this.alphabeticalOrder;
+      } else if (this.selected === 2) {
+        this.properList = this.dateOrder;
       }
     }
   },
@@ -123,8 +127,41 @@ export default {
   },
 
   computed: {
-    displayedItems() {
+    properList() {
+      if (this.selected === 0) {
+        return this.items.slice(0, this.itemsToDisplay);
+      } else if (this.selected === 1) {
+        return this.alphabeticalOrder;
+      } else if (this.selected === 2) {
+        return this.dateOrder;
+      }
       return this.items.slice(0, this.itemsToDisplay);
+    },
+
+    alphabeticalOrder () {
+      let alphaItems = [...this.items];
+      alphaItems = alphaItems.sort((a, b) => {
+        const titleA = a.title.toUpperCase();
+        const titleB = b.title.toUpperCase();
+        if (titleA < titleB) {
+          return -1;
+        }
+        if (titleA > titleB) {
+          return 1;
+        }
+        return 0;
+      });
+      return alphaItems.slice(0, this.itemsToDisplay);
+    },
+
+    dateOrder () {
+      let dateItems = [...this.items];
+      dateItems = dateItems.sort((a, b) => {
+        const yearA = a.year ? a.year[0] : 0;
+        const yearB = b.year ? b.year[0] : 0;
+        return yearB - yearA;
+      });
+      return dateItems.slice(0, this.itemsToDisplay);
     }
   }
 }
@@ -149,5 +186,4 @@ export default {
   display: flex;
   margin: 10px auto;
 }
-
 </style>
