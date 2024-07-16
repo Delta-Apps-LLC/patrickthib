@@ -10,7 +10,7 @@
                 data-aos="fade-in"
                 data-aos-duration="3000"
             >
-                <div :class="isHome && viewMore ? 'topped' : 'centered'" v-if="isEven(i) || windowWidth <= 600">
+                <div :class="viewMore && indexExpanded == i ? 'topped' : 'centered'" v-if="isEven(i) || windowWidth <= 600">
                     <img class="picture-card-img-even" :src="item.image" />
                 </div>
                 <div :class="isEven(i) ? 'picture-card-text-even text-font main-white' : 'picture-card-text-odd text-font main-white'">
@@ -18,25 +18,26 @@
                     <span v-if="item.subtitle">{{ item.subtitle }}<br><br></span>
                     <span>{{ item.text }}</span>
 
-                    <div v-if="isHome"
-                        style="margin-top: 20px;"
-                    >
+                    <div style="margin-top: 20px;"> <!-- v-if="isHome" -->
                         <div style="display: flex; justify-content: right !important;">
                             <v-btn class="main-font"
                                 id="showMoreButton"
-                                @click="showMore()"
+                                @click="showMore(i)"
                                 text
+                                :disabled="viewMore && indexExpanded != i"
                             >
-                                {{ viewMore ? 'See Less' : 'See More' }}
+                                {{ viewMore && indexExpanded == i ? 'See Less' : 'See More' }}
                             </v-btn>
                         </div>
-                        <div v-if="viewMore"
+                        <div v-if="viewMore && indexExpanded == i"
                             id="aboutMeSection"
                             style="width: 100%; margin: 20px 0 !important; display: flex; justify-content: left !important;"
                         >
                             <AboutMe />
                         </div>
-                        <div v-if="viewMore" style="display: flex; justify-content: right !important;">
+                        <div v-if="viewMore && indexExpanded == i"
+                            style="display: flex; justify-content: right !important;"
+                        >
                             <v-btn class="main-font"
                                 @click="showMore()"
                                 text
@@ -76,6 +77,7 @@ export default {
     data () {
         return {
             viewMore: false,
+            indexExpanded: null,
             windowWidth: window.innerWidth,
         }
     },
@@ -89,12 +91,13 @@ export default {
             return i == 0 || i % 2 == 0
         },
 
-        showMore() {
+        showMore(i) {
+            this.indexExpanded = this.viewMore ? null : i
             this.viewMore = !this.viewMore
             if (this.viewMore) {
                 this.$nextTick(() => {
                     const aboutMeElement = document.getElementById('aboutMeSection');
-                    const offsetTop = aboutMeElement.offsetTop;
+                    const offsetTop = aboutMeElement?.offsetTop;
     
                     window.scrollTo({
                         top: offsetTop,
