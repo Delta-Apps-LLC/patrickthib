@@ -70,33 +70,75 @@ export default {
       ],
       leadership: [
         {
-          title: 'HGA Chairman of Council Coordinating Committee',
+          title: 'University of California, Berkeley, Center for the Built Environment, Executive Advisory Board',
+          details: 'Strategic planning for research impacting human experience and built environment performance.',
+          duration: '2011-Present',
+        },
+        {
+          title: 'Trimble-Sketch-up Advisory Board',
+          details: 'Provide strategic insight for future planning of the architecture profession and the built environment.',
+          duration: '2023-Present',
+        },
+        {
+          title: 'National Large Firm Roundtable (LFRT) Sustainability Committee Executive Board',
+          details: 'Strategic planning for the 60 largest firm in the US and the collective action to be taken to change business as usual for the built environment and related industries.',
+          duration: '2022-Present',
+        },
+        {
+          title: 'National Large Firm Roundtable Annual Sustainability Summit Leader',
+          details: 'National co-chair for the national summit "Collaborating to Exponentially Accelerate our Decarbonized Future" Representing 200,000 design professional under my leadership a selected group of 50+ senior national leaders convened to significantly change business as usual.',
+          duration: '2024',
+        },
+        {
+          title: 'National Large Firm Roundtable Sustainability Committee Chair',
+          details: 'National co-chair leading 60+ of the largest architecture firms in the United States to make an accelerated carbon neutral commitment for the firms own operations adding on to the long-standing carbon neutral design commitment for the firms work for its clients. Recently convened annual summit with the focus of "Accelerating our Decarbonized Future"',
+          duration: '2022-2024',
+        },
+        {
+          title: 'American Institute of Architects, Framework for Design Excellence',
+          details: 'National working group and principal of author of "Design for Equitable Communities" and co-author with 9 others to write and publish the guide for the entire profession outlining design excellence.',
+          duration: '2021',
+          url: 'https://www.aia.org/resources/6077668-framework-for-design-excellence'
+        },
+        {
+          title: 'National Working Group Leader, Sustainability Playbook',
+          details: 'Large Firm Roundtable Sustainability Committee. Led a working group and was principal author of a concise guide for CEO\'s to operationalize sustainability at scale across the profession. This guide was unanimously adopted as the high performance guide for firm operations and integrating sustainability into each firms operations at an accelerated pace by identifying top five high performance attributes and top 5 high performance actions.',
+          duration: '2020',
+        },
+        {
+          title: 'Strategic Planning',
+          details: 'JLG strategic planning core team 2020 to 2021. HGA: strategic plan for 2011-2013 and for 2007-2010. Wrote the sustainable design strategic plan for the firm.',
+          duration: 'Various',
+        },
+        {
+          title: 'Strategic Planning',
+          details: 'JLG strategic planning core team 2020 to 2021. HGA: strategic plan for 2011-2013 and for 2007-2010. Wrote the sustainable design strategic plan for the firm.',
+          duration: '6 years',
+        },
+        // 
+        {
+          title: 'National Chairman of Council Coordinating Committee',
           details: 'Responsible for all disciplines and practice initiatives with emphasis including sustainable design.',
           duration: '2004-2016',
         },
         {
-          title: 'HGA Chair of HGA Sustainability Council',
-          details: 'First chair of newly formed council.',
-          duration: '',
+          title: 'National Chair of HGA Sustainability Council',
+          details: 'First chair of national council to collaborate between all disciplines and plan for collective action.',
+          duration: '9 years',
         },
         {
           title: 'Design Futures Council Sustainable Leadership Summit',
-          details: 'Delegate to the annual invitation-only meeting. 2012 produced a document called the \"Portland Promise.\"',
+          details: 'National delegate to the annual invitation-only meeting. 2012 produced a document called the \"Portland Promise.\"',
           duration: '2012-Present',
         },
         {
           title: 'Visioning the Future of University of Minnesota Center for Sustainable Building Research',
-          details: 'Meeting with Dean of College of Architecture to develop a plan for the future of this center.',
+          details: 'Strategic planning meeting with the Dean of College of Architecture to develop a plan for the future of this center.',
           duration: '2012',
         },
         {
-          title: 'HGA Firm-Wide Sustainable Design Summit',
+          title: 'Firm-Wide Sustainable Design Summit',
           details: 'Hosted 26 delegates gathered for a two day summit to plan for the future of sustainable design and how to impact communities for good.',
-          duration: '2011, 2012',
-        },
-        {
-          title: 'Center for the Built Environment, UC Berkley',
-          details: 'Executive council of industry partners.',
           duration: '2011, 2012',
         },
         {
@@ -105,14 +147,9 @@ export default {
           duration: '2009-Present',
         },
         {
-          title: 'HGA Strategic Plan Subcommittee',
-          details: 'Appointed to subcommittee to help develop the firm\'s strategic plan for 2011-2013 and for 2007-2010. Wrote the sustainable design strategic plan for the firm.',
-          duration: '',
-        },
-        {
-          title: 'Eco-Structure Board',
-          details: '',
-          duration: '2010-Present',
+          title: 'Eco-Structure National Advisory Board',
+          details: 'Strategic planning for knowledge sharing topic and looking to the future of the architecture profession.',
+          duration: '2010-2012',
         },
         {
           title: 'Evergreen Awards Jury',
@@ -135,17 +172,17 @@ export default {
           duration: '2004, 2005',
         },
         {
-          title: 'AIA Continuing Education Provider Curriculum Development',
-          details: '',
-          duration: '1997',
+          title: 'AIA Continuing Education Course Provider',
+          details: 'Ongoing provider of curriculum for continuing education for American Institute of Architects.',
+          duration: 'Ongoing',
         },
         {
-          title: 'American Institute of Architects (AIA) Committee on the Environment, Environmental Resource Guide,',
-          details: 'Task group member for ERG, energy group and materials group. Contributions included research on the regulatory background of paints, input for ERG format and contact with other associations to secure involvement. Coordinated ERG meetings at 3M, a construction products supplier, and generated support for ERG project.',
+          title: 'North American Institute of Architects (AIA) Committee on the Environment, Environmental Resource Guide,',
+          details: 'Strategy that became todays sustainability approach and national organizations. National working group member for ERG, energy group and materials group. Contributions included research, strategy for ERG format and content. National liaison for AIA MN. Presented to local professional associations and fostered support for the strategic direction of the ERG project in 3M and around the profession.',
           duration: '1990-1993',
         },
         {
-          title: 'Construction Specifications Institute (CSI)',
+          title: 'Construction Specifications Institute (CSI), Technical Committee Chair',
           details: 'Professional Member Construction Specifications Institute Technical Committee Chairman.',
           duration: '1990-1993',
         },
@@ -166,7 +203,7 @@ export default {
         },
         {
           title: 'American Institute of Architects (AIA)',
-          details: 'Task group for ERG, energy group and materials group. Contributions include research on the regulatory background of paints, input for ERG format and contact with other associations to secure involvement. Coordinated ERG meetings at 3M, a construction products supplier, and generated support for ERG project.',
+          details: 'Working group leading to Committee on the Environment (COTE). AIA Committee on the Environment. AIA Environmental Resource Guide. AIA MN Committee on the Environment. National working group for Framework for Design Excellence: Strategy, planning and content for a sustainability guide for the built environment that impacts the work of 90,000+ architects and additional others.',
           duration: '1990-1992',
         },
         {
@@ -175,9 +212,14 @@ export default {
           duration: '1991',
         },
         {
-          title: 'AIA Housing Committee,',
+          title: 'AIA Housing Committee',
           details: '',
           duration: '1991',
+        },
+        {
+          title: 'Professional Association Membership',
+          details: 'American Institute of Architects. Construction Specification Institute. US Green Building Council. Living Futures Institute. UC Berkeley Center for the Built Environment. Design Future Council. Large Firm Roundtable.',
+          duration: '',
         },
       ],
       windowWidth: window.innerWidth
