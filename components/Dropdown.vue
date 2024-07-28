@@ -56,7 +56,7 @@
         @click="showAllItems()"
         text
         :disabled="properList.length === items.length"
-      >Show All</v-btn>
+      >Load All</v-btn>
     </div>
   </div>
 </template>
