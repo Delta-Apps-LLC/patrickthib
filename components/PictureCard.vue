@@ -18,7 +18,7 @@
                     <span v-if="item.subtitle">{{ item.subtitle }}<br><br></span>
                     <span>{{ item.text }}</span>
 
-                    <div style="margin-top: 20px;"> <!-- v-if="isHome" -->
+                    <div style="margin-top: 20px;" v-if="isHome">
                         <div style="display: flex; justify-content: right !important;">
                             <v-btn class="main-font"
                                 id="showMoreButton"
