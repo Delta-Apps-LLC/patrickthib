@@ -12,9 +12,7 @@
       </button>
       <v-spacer />
 
-      <div v-if="windowWidth >= 950"
-        style="display: flex; margin: auto 0; flex-wrap: wrap;"
-      >
+      <div class="nav-list" v-if="windowWidth >= 950">
         <nuxt-link class="nav-btns main-font main-black"
           :class="btn.to == currentPage ? 'selected' : null"
           v-for="(btn, i) in items"
@@ -114,6 +112,10 @@ export default {
           title: 'Recommendations',
           to: '/recommendations'
         },
+        {
+          title: 'Teaching and Research',
+          to: '/teaching_and_research'
+        }
       ],
       title: 'Patrick Thibaudeau',
       linkedinURL: 'https://www.linkedin.com/in/patrick-thibaudeau-leed-fellow-lfa-ccs-6348685/',
@@ -138,6 +140,13 @@ export default {
 <style scoped>
 @import '~/assets/styles.css';
 
+.nav-list {
+  max-width: 70% !important;
+  display: inline-flex;
+  margin: auto 0;
+  flex-wrap: wrap;
+}
+
 .nav-title {
   margin: auto !important;
 }
@@ -145,15 +154,16 @@ export default {
 .nav-btns {
   text-decoration: none;
   margin-left: 5px !important;
+  margin-top: 3px;
   padding: 4px 12px !important;
   border-radius: 4px;
   font-size: 18px;
-  margin: auto;
-  
-  &&:hover {
-    opacity: 0.7;
-    background-color: #dbd3d3;
-  }
+}
+
+.nav-btns:hover {
+  opacity: 0.7;
+  background-color: #dbd3d3;
+
 }
 
 .selected {
@@ -166,10 +176,8 @@ export default {
   background-color: #858282;
 }
 
-#linkedin-logo {
-  &&:hover {
-    opacity: 0.7;
-  }
+#linkedin-logo:hover {
+  opacity: 0.7;
 }
 
 </style>
