@@ -34,7 +34,7 @@
             <v-icon size="35" style="color: #2b2b2b;">mdi-menu</v-icon>
           </v-btn>
         </template>
-        <v-list>
+        <v-list style="max-width: 400px;">
           <div v-for="(btn, i) in items" :key="i" style="margin-bottom: 5px;">
             <nuxt-link class="nav-btns main-font main-white"
               :class="btn.to == currentPage ? 'selected-menu' : null"
