@@ -20,6 +20,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
   name: 'AwardsPage',
 
+  head() {
+    return {
+      title: 'Awards - Patrick Thibaudeau',
+      meta: [
+        { hid: 'awards-description', name: 'description', content: 'Patrick Thibaudeau awards page; see Patrick\'s awards and achievements' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, awards, architecture, sustainability, LEED FELLOW, environment' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth

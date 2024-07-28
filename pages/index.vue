@@ -36,6 +36,16 @@ import MiniHeader from '~/components/MiniHeader.vue';
 export default {
   name: 'IndexPage',
 
+  head() {
+    return {
+      title: 'Home - Patrick Thibaudeau',
+      meta: [
+        { hid: 'home-description', name: 'description', content: 'Patrick Thibaudeau home page; see Patrick\'s introduction, overview, and TEDxFargo presentation' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, TEDx, TEDxFargo, presentation, qualifications' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth

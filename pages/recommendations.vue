@@ -28,6 +28,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
     name: 'RecommendationsPage',
 
+    head() {
+        return {
+        title: 'Recommendations - Patrick Thibaudeau',
+        meta: [
+            { hid: 'recommendations-description', name: 'description', content: 'Patrick Thibaudeau recommendations page; see what people have said about Patrick and why they recommend him' },
+            { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, recommendations, reviews, quotes, endorsements' }
+        ]
+        }
+    },
+
     created () {
         window.addEventListener('resize', () => {
         this.windowWidth = window.innerWidth

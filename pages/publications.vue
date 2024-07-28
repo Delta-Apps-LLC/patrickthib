@@ -32,6 +32,16 @@ import Dropdown from '~/components/Dropdown.vue';
 export default {
   name: 'PublicationsPage',
 
+  head() {
+    return {
+      title: 'Publications - Patrick Thibaudeau',
+      meta: [
+        { hid: 'publications-description', name: 'description', content: 'Patrick Thibaudeau publications page; see Patrick\'s publications, including articles, interviews, and quotes' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, articles, publications, interviews, quotes' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth

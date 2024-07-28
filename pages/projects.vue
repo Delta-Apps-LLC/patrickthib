@@ -16,6 +16,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
   name: 'ProjectsPage',
 
+  head() {
+    return {
+      title: 'Projects - Patrick Thibaudeau',
+      meta: [
+        { hid: 'projects-description', name: 'description', content: 'Patrick Thibaudeau projects page; see the projects that Patrick has lead throughout his career' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, project, projects' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth

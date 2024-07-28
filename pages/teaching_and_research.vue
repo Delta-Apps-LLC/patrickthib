@@ -31,6 +31,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
     name: 'TeachingResearchPage',
 
+    head() {
+        return {
+        title: 'Teaching and Research - Patrick Thibaudeau',
+        meta: [
+            { hid: 'teaching-and-research-description', name: 'description', content: 'Patrick Thibaudeau teaching and research page; see Patrick\'s teaching experience and his career research' },
+            { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, teacher, teaching, instructor, leader, research, industry' }
+        ]
+        }
+    },
+
     created () {
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth

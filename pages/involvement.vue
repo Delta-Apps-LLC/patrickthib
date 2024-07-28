@@ -32,6 +32,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
     name: 'InvolvementPage',
 
+    head() {
+        return {
+        title: 'Involvement - Patrick Thibaudeau',
+        meta: [
+            { hid: 'involvement-description', name: 'description', content: 'Patrick Thibaudeau involvement page; see the memberships and conferences that Patrick has be involved in.' },
+            { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, involvement, conferences, memberships, USGBC, AIA' }
+        ]
+        }
+    },
+
     created () {
         window.addEventListener('resize', () => {
             this.windowWidth = window.innerWidth

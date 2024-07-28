@@ -26,6 +26,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
   name: 'ExperiencePage',
 
+  head() {
+    return {
+      title: 'Experience - Patrick Thibaudeau',
+      meta: [
+        { hid: 'experience-description', name: 'description', content: 'Patrick Thibaudeau experience page; see Patrick\'s professional experience, leadership, and service' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, experience, professional, architecture, sustainability, service, leadership' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth

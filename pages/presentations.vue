@@ -20,6 +20,16 @@ import BottomBuffer from '~/components/BottomBuffer.vue'
 export default {
   name: 'PresentationsPage',
 
+  head() {
+    return {
+      title: 'Presentations - Patrick Thibaudeau',
+      meta: [
+        { hid: 'presentations-description', name: 'description', content: 'Patrick Thibaudeau presentations page; see Patrick\'s professional presentations throughout his career' },
+        { hid: 'keywords', name: 'keywords', content: 'Patrick, Thibaudeau, architecture, sustainability, presentation, speaker, keynote' }
+      ]
+    }
+  },
+
   created () {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth
