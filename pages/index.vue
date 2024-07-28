@@ -6,6 +6,7 @@
 
     <div class="centered">
       <SectionHeader title="Recent Highlights" />
+      <MiniHeader title="TEDxFargo" />
       <iframe style="margin: 0 auto 20px auto;"
         data-aos="fade-in"
         data-aos-duration="2500"
@@ -30,6 +31,7 @@ import 'aos/dist/aos.css';
 import PictureCard from '~/components/PictureCard.vue'
 import SectionHeader from '~/components/SectionHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
+import MiniHeader from '~/components/MiniHeader.vue';
 
 export default {
   name: 'IndexPage',
@@ -44,7 +46,8 @@ export default {
   components: {
     PictureCard,
     SectionHeader,
-    BottomBuffer
+    BottomBuffer,
+    MiniHeader
   },
 
   data () {
