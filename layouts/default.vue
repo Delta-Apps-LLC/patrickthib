@@ -2,6 +2,7 @@
   <v-app dark>
     <v-app-bar
       class="app-bar"
+      :class="{ 'collapsed': isCollapsed }"
       :src="require('@/assets/images/building-sun.jpg')"
       shrink-on-scroll
       fixed
@@ -56,7 +57,7 @@
       absolute
       app
     >
-      <span>&copy; 2023</span>
+      <span>&copy; 2023, Patrick Thibaudeau</span>
       <v-spacer />
       <!-- <a target="_blank" href="resume.pdf">Full Resume</a> -->
       <div style="margin-right: 10px;"></div>
@@ -75,6 +76,9 @@ export default {
     window.addEventListener('resize', () => {
       this.windowWidth = window.innerWidth
     })
+    window.addEventListener('scroll', () => {
+      this.isCollapsed = window.scrollY > 0;
+    });
   },
   
   data () {
@@ -119,6 +123,7 @@ export default {
       ],
       title: 'Patrick Thibaudeau',
       linkedinURL: 'https://www.linkedin.com/in/patrick-thibaudeau-leed-fellow-lfa-ccs-6348685/',
+      isCollapsed: false,
       windowWidth: window.innerWidth,
     }
   },
@@ -154,7 +159,7 @@ export default {
 .nav-btns {
   text-decoration: none;
   margin-left: 5px !important;
-  margin-top: 3px;
+  margin-top: 2px;
   padding: 4px 12px !important;
   border-radius: 4px;
   font-size: 18px;
@@ -178,6 +183,11 @@ export default {
 
 #linkedin-logo:hover {
   opacity: 0.7;
+}
+
+.app-bar.collapsed .nav-btns {
+  padding: 2px 6px !important;
+  font-size: 14px;
 }
 
 </style>
