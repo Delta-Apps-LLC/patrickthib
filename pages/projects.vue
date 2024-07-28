@@ -1,7 +1,7 @@
 <template>
   <div>
-    Projects Page
-
+    <SectionHeader title="Nothing here yet, stay tuned!" />
+    
     <SectionHeader title="Use The Links At The Top To Learn More" />
     <BottomBuffer />
   </div>

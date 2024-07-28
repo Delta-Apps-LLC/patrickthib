@@ -2,7 +2,7 @@
     <div>
         <div class="centered">
             <SectionHeader title="Engagement and Involvement" />
-            <v-row style="margin-bottom: 20px;">
+            <v-row style="margin-bottom: 20px; align-items: start;">
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
                     <MiniHeader title="Memberships" />
                     <Dropdown :items="memberships"
