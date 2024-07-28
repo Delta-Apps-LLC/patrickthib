@@ -41,15 +41,23 @@
           <v-spacer />
           <span>{{ item.year?.join(', ') }}{{ item.duration }}</span>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>{{ item.details }}</v-expansion-panel-content>
+        <v-expansion-panel-content style="white-space: pre-wrap;">{{ item.details }}</v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <v-btn class="load-more-btn main-font"
-      @click="loadMoreItems"
-      text
-      :disabled="properList.length === items.length"
-    >Load More...</v-btn>
+    <div class="load-buttons-wrapper">
+      <v-btn class="load-more-btn main-font"
+        @click="loadMoreItems()"
+        text
+        :disabled="properList.length === items.length"
+      >Load More</v-btn>
+  
+      <v-btn class="load-more-btn main-font"
+        @click="showAllItems()"
+        text
+        :disabled="properList.length === items.length"
+      >Show All</v-btn>
+    </div>
   </div>
 </template>
 
@@ -123,6 +131,10 @@ export default {
 
     loadMoreItems() {
       this.itemsToDisplay += 10;
+    },
+
+    showAllItems() {
+      this.itemsToDisplay = this.items.length
     }
   },
 
@@ -182,8 +194,11 @@ export default {
   background-color: #858282;
 }
 
-.load-more-btn {
+.load-buttons-wrapper {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: 10px auto;
 }
+
 </style>

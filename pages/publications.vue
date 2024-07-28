@@ -74,8 +74,8 @@ export default {
         },
         {
           title: 'Think Big, Future of Learning, Business of Education, Carbon Neutral Resilient Facilities: Minnesota State University at Moorhead Master Plan',
-          url: 'https://www.facebook.com/story.php?story_fbid=8380806408627526&amp;id=175676935807222&amp;m_entstream_source=permalink',
-          details: 'A presentation to a public event for the Moorhead community. Interviewed for TV, radio and print new media. This visioning and planning effort received TV, Radio and print news media coverage. I was pleased to lead a large diverse team for Minnesota State University and Moorhead (MSUM) producing a ground breaking, forward looking, carbon neutral master plan. I hosted a public open house with MSUM to introduce the new 20-year plan. This carbon neutral plan is leading the country, region and state. The plan includes key reductions that pay big returns and big impact. It sets a framework for future enrollment growth for a thriving MSUM campus. The plan focusses on the Future of Learning, The Business of Education, Resilient Carbon Neutral Facilities built on a foundation of equitable and inclusive learning. Four strategies in the plan: 1. Culture of Connecting, Best Business Case, Carbon Neutrality, Honoring Heritage and Technology of Tomorrow. I was pleased to host this public open house with Jean Hollaar, the MSUM Vice President of Finance &amp; Administration and Brenda Norris, MSUM AVP Facilities Director. This plan is evidence we are on the brink of the greatest economic development and financial prosperity transition that has occurred in more than a generation.',
+          url: 'https://www.facebook.com/story.php?story_fbid=8380806408627526&id=175676935807222&m_entstream_source=permalink',
+          details: 'A presentation to a public event for the Moorhead community. Interviewed for TV, radio and print new media. This visioning and planning effort received TV, Radio and print news media coverage. I was pleased to lead a large diverse team for Minnesota State University and Moorhead (MSUM) producing a ground breaking, forward looking, carbon neutral master plan. I hosted a public open house with MSUM to introduce the new 20-year plan. This carbon neutral plan is leading the country, region and state. The plan includes key reductions that pay big returns and big impact. It sets a framework for future enrollment growth for a thriving MSUM campus. The plan focusses on the Future of Learning, The Business of Education, Resilient Carbon Neutral Facilities built on a foundation of equitable and inclusive learning. Four strategies in the plan: 1. Culture of Connecting, Best Business Case, Carbon Neutrality, Honoring Heritage and Technology of Tomorrow. I was pleased to host this public open house with Jean Hollaar, the MSUM Vice President of Finance & Administration and Brenda Norris, MSUM AVP Facilities Director. This plan is evidence we are on the brink of the greatest economic development and financial prosperity transition that has occurred in more than a generation.',
           year: [2022],
         },
         {
@@ -155,7 +155,7 @@ export default {
         },
         {
           title: 'Perspectives in Sustainable Design 2012',
-          details: 'by Mara Baum, Dan Heinfeld, Daniel Overbey, Erik Ring, Derrick Teal, Patrick Thibaudeau, Environmental Design &amp; Construction, December 3, 2012.',
+          details: 'by Mara Baum, Dan Heinfeld, Daniel Overbey, Erik Ring, Derrick Teal, Patrick Thibaudeau, Environmental Design & Construction, December 3, 2012.',
           year: [2012],
         },
         {
@@ -302,7 +302,7 @@ export default {
         {
           title: 'HGA Creates Greener Outlook with Print Systems from Oce',
           url: '',
-          details: 'Building Design &amp; Construction, Volume online. September 2, 2009.',
+          details: 'Building Design & Construction, Volume online. September 2, 2009.',
           year: [2009],
         },
         {
