@@ -47,6 +47,12 @@ export default {
     return {
       awardsAchievements: [
         {
+          title: 'Outstanding Contribution Award',
+          url: 'outstanding-contribution-award.png',
+          details: 'This is in recognition of the innovation and overall scientific quality of the paper presented during the WSBE24 Conference, held on 12-14 June 2024, and, thus, contributing to knowledge development and exchange in the field.',
+          year: [2024]
+        },
+        {
           title: 'Most Inspirational & Progressive Architecture Firm - USA',
           url: null,
           details: 'BUILD Magazine Awards,',
