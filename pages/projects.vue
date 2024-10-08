@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SectionHeader title="Nothing here yet, stay tuned!" />
+    <SectionHeader title="We are currently working on this page - stay tuned!" />
     
     <SectionHeader title="Use The Links At The Top To Learn More" />
     <BottomBuffer />
