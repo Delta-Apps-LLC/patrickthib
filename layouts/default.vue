@@ -22,6 +22,13 @@
         >
           {{ btn.title }}
         </nuxt-link>
+        <v-icon color="#2b2b2b">mdi-circle-small</v-icon>
+        <nuxt-link class="nav-btns main-font main-black"
+          :class="currentPage == '/contact' ? 'selected' : null"
+          to="/contact"
+        >
+          Contact
+        </nuxt-link>
       </div>
 
       <v-menu v-else-if="windowWidth < 950" offset-y>
@@ -43,6 +50,13 @@
               {{ btn.title }}
             </nuxt-link>
           </div>
+          <v-divider />
+          <nuxt-link class="nav-btns main-font main-white"
+            :class="currentPage == '/contact' ? 'selected-menu' : null"
+            to="/contact"
+          >
+            Contact
+          </nuxt-link>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -119,7 +133,11 @@ export default {
         {
           title: 'Teaching and Research',
           to: '/teaching_and_research'
-        }
+        },
+        // {
+        //   title: 'Contact',
+        //   to: '/contact'
+        // }
       ],
       title: 'Patrick Thibaudeau',
       linkedinURL: 'https://www.linkedin.com/in/patrick-thibaudeau-leed-fellow-lfa-ccs-6348685/',
