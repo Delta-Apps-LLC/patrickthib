@@ -10,9 +10,10 @@
           <fieldset>
             <legend>Your Information</legend>
             <div style="display: flex; justify-content: center;">
-              <input v-model="name" type="text" id="name" name="name" placeholder="Name">
-              <input v-model="email" type="email" id="email" name="email" placeholder="Email">
+              <input v-model="firstname" type="text" id="firstname" name="firstname" placeholder="First name">
+              <input v-model="lastname" type="text" id="lastname" name="lastname" placeholder="Last name">
             </div>
+            <input v-model="email" type="email" id="email" name="email" placeholder="Email">
           </fieldset>
           <fieldset>
             <legend>Your Message</legend>
@@ -26,8 +27,9 @@
 
           <v-btn
             type="submit"
+            @click="clearForm()"
             style="padding: 20px; font-size: 18px; display: flex; margin: auto;"
-            :disabled="name == '' || email == '' || message == ''"
+            :disabled="firstname == '' || lastname == '' || email == '' || message == ''"
             dark
           >
             <v-icon color="#668297">mdi-send</v-icon>
@@ -66,7 +68,8 @@ export default {
       this.windowWidth = window.innerWidth
     })
     AOS.init()
-    this.name = '';
+    this.firstname = '';
+    this.lastname = '';
     this.email = '';
     this.message = '';
   },
@@ -78,13 +81,25 @@ export default {
 
   data () {
     return {
-      name: '',
+      firstname: '',
+      lastname: '',
       email: '',
       message: '',
       awardsAchievements: [],
       windowWidth: window.innerWidth,
     }
   },
+
+  methods: {
+    clearForm() {
+      setTimeout(() => {
+        this.firstname = '';
+        this.lastname = '';
+        this.email = '';
+        this.message = '';
+      }, 1500)
+    }
+  }
 }
 </script>
 
@@ -122,6 +137,10 @@ fieldset > input, fieldset > div > input {
   border: solid #668297;
   color: #e1e1e1;
   width: 48%;
+}
+
+#email {
+  width: 98%;
 }
 
 #message {
