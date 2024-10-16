@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
-
 export const awards = [
   {
     id: 'Mm4cZYu3dhMDYCV0Tn',
