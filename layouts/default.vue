@@ -11,6 +11,7 @@
       <button @click="toHome()" style="display: flex; margin: auto;">
         <img class="logo" src="~/assets/images/logo.png" />
       </button>
+
       <v-spacer />
 
       <div class="nav-list" v-if="windowWidth >= 950">
@@ -22,13 +23,29 @@
         >
           {{ btn.title }}
         </nuxt-link>
+
         <v-icon color="#2b2b2b">mdi-circle-small</v-icon>
         <nuxt-link class="nav-btns main-font main-black"
           :class="currentPage == '/contact' ? 'selected' : null"
           to="/contact"
-        >
+          >
           Contact
         </nuxt-link>
+        <v-icon color="#2b2b2b">mdi-circle-small</v-icon>
+
+        <div style="float: right; display: flex; flex-direction: row;">
+          <input
+            @keypress.enter="search()"
+            v-model="searchText"
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search..."
+          />
+          <button @click="search()" id="search-btn">
+            <v-icon color="black">mdi-magnify</v-icon>
+          </button>
+        </div>
       </div>
 
       <v-menu v-else-if="windowWidth < 950" offset-y>
@@ -57,6 +74,23 @@
           >
             Contact
           </nuxt-link>
+
+          <div class="mobile-search-wrapper">
+            <div class="mobile-search-content">
+              <input
+                @click.stop
+                @keypress.enter="search()"
+                v-model="searchText"
+                type="text"
+                id="mobile-search"
+                name="search"
+                placeholder="Search..."
+              />
+              <button @click="search()" id="mobile-search-btn">
+                <v-icon color="#e1e1e1">mdi-magnify</v-icon>
+              </button>
+            </div>
+          </div>
         </v-list>
       </v-menu>
     </v-app-bar>
@@ -134,11 +168,8 @@ export default {
           title: 'Teaching and Research',
           to: '/teaching_and_research'
         },
-        // {
-        //   title: 'Contact',
-        //   to: '/contact'
-        // }
       ],
+      searchText: '',
       title: 'Patrick Thibaudeau',
       linkedinURL: 'https://www.linkedin.com/in/patrick-thibaudeau-leed-fellow-lfa-ccs-6348685/',
       isCollapsed: false,
@@ -150,18 +181,46 @@ export default {
     toHome() {
       this.$router.push('/')
     },
+
+    async search() {
+      if (this.searchText.length >= 2) {
+        await this.$store.dispatch('search/search', { searchText: this.searchText})
+        if (this.currentPage != '/search') {
+          this.$router.push('/search')
+        }
+      }
+    }
   },
 
   computed: {
     currentPage () {
       return this.$route.path
-    }
+    },
   }
 }
 </script>
 
 <style scoped>
 @import '~/assets/styles.css';
+
+.mobile-search-content {
+  display: flex;
+  flex-direction: row;
+  margin: 12px 0 0 16px;
+}
+
+#mobile-search {
+  color: #e1e1e1;
+  font-size: 14px;
+  height: 24px;
+  border: solid #e1e1e1 1.5px;
+  padding: 2px;
+  border-radius: 4px;
+}
+
+#mobile-search-btn {
+  margin-left: 8px;
+}
 
 .nav-list {
   max-width: 70% !important;
@@ -186,7 +245,25 @@ export default {
 .nav-btns:hover {
   opacity: 0.7;
   background-color: #dbd3d3;
+}
 
+#search-btn {
+  margin-left: 2px;
+}
+
+#search-btn:hover {
+  opacity: 0.6;
+}
+
+#search {
+  font-size: 14px;
+  height: 24px;
+  border: solid #2b2b2b 1.5px;
+  padding: 1px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin: auto;
 }
 
 .selected {

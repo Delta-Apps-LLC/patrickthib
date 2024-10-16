@@ -5,6 +5,7 @@
             align="center"
             v-for="(item, i) in items"
             :key="i"
+            :id="anchor"
         >
             <div :class="isEven(i) ? 'picture-card-even main-white' : 'picture-card-odd main-white'"
                 data-aos="fade-in"
@@ -16,7 +17,7 @@
                 <div :class="isEven(i) ? 'picture-card-text-even text-font main-white' : 'picture-card-text-odd text-font main-white'">
                     <span v-if="item.title">{{ item.title }}<br></span>
                     <span v-if="item.subtitle">{{ item.subtitle }}<br><br></span>
-                    <span>{{ item.text }}</span>
+                    <span>{{ item.details }}</span>
 
                     <div style="margin-top: 20px;" v-if="isHome">
                         <div style="display: flex; justify-content: right !important;">
@@ -70,6 +71,23 @@ export default {
         AOS.init()
     },
 
+    mounted () {
+    if (this.anchor) {
+        this.$nextTick(() => {
+            const el = document.getElementById(this.anchor)
+            if (el) {
+                setTimeout(() => {
+                    const offsetTop = el?.offsetTop;
+                    window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth',
+                    });
+                }, 500);
+            }
+        })
+    }
+  },
+
     components: {
         AboutMe
     },
@@ -84,6 +102,7 @@ export default {
 
     props: {
         items: Array,
+        anchor: String,
     },
 
     methods: {

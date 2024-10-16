@@ -68,10 +68,6 @@ export default {
       this.windowWidth = window.innerWidth
     })
     AOS.init()
-    this.firstname = '';
-    this.lastname = '';
-    this.email = '';
-    this.message = '';
   },
 
   components: {
@@ -85,7 +81,6 @@ export default {
       lastname: '',
       email: '',
       message: '',
-      awardsAchievements: [],
       windowWidth: window.innerWidth,
     }
   },

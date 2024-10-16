@@ -32,6 +32,7 @@
       <v-expansion-panel
         v-for="(item, i) in properList"
         :key="i"
+        :id="item.id"
       >
         <v-expansion-panel-header>
           <span style="width: 85%;" v-if="item.url">
@@ -75,6 +76,28 @@ export default {
     AOS.init()
   },
 
+  mounted () {
+    if (this.anchor) {
+      this.showAllItems()
+      this.$nextTick(() => {
+        const el = document.getElementById(this.anchor)
+        if (el) {
+          setTimeout(() => {
+            const offsetTop = el?.offsetTop;
+            window.scrollTo({
+              top: offsetTop,
+              behavior: 'smooth',
+            });
+          }, 500);
+          const targetIndex = this.items.findIndex(item => item.id === this.anchor);
+          if (targetIndex !== -1) {
+            this.expandedPanels = [targetIndex];
+          }
+        }
+      })
+    }
+  },
+
   data () {
     return {
       expandedPanels: [],
@@ -92,6 +115,7 @@ export default {
 
   props: {
     items: Array,
+    anchor: String,
   },
 
   watch: {

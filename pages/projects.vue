@@ -12,6 +12,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css';
 import SectionHeader from '~/components/SectionHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
+import { projects } from '~/static/data';
 
 export default {
   name: 'ProjectsPage',
@@ -40,6 +41,7 @@ export default {
 
   data () {
     return {
+      projects: projects,
       windowWidth: window.innerWidth,
     }
   },

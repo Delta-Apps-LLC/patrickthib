@@ -5,14 +5,14 @@
             <v-row style="margin-bottom: 20px; align-items: start;">
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
                     <MiniHeader title="Memberships" />
-                    <Dropdown :items="memberships"
+                    <Dropdown :items="memberships" :anchor="anchor"
                         :style="windowWidth <= 700 ? {'margin-bottom': '20px'} : null"
                     />
                 </v-col>
 
                 <v-col class="centered" :cols="windowWidth > 700 ? '6' : '12'">
                     <MiniHeader title="Conferences" />
-                    <Dropdown :items="conferences" />
+                    <Dropdown :items="conferences" :anchor="anchor" />
                 </v-col>
             </v-row>
         </div>
@@ -28,6 +28,8 @@ import Dropdown from '~/components/Dropdown.vue'
 import SectionHeader from '~/components/SectionHeader.vue'
 import MiniHeader from '~/components/MiniHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
+import { memberships } from '~/static/data';
+import { conferences } from '~/static/data';
 
 export default {
     name: 'InvolvementPage',
@@ -58,70 +60,9 @@ export default {
 
     data () {
         return {
-            memberships: [
-                {
-                    title: 'USGBC National - Firm',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'USGBC Local Chapter',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'Internal Living Futures Institute',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'UC Berkley Center for the Built Environment',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'Design Futures Council',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'AIA Large Firm Round Table',
-                    url: null,
-                    details: '',
-                },
-            ],
-            conferences: [
-                {
-                    title: 'Greenbuild',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'Living Futures Conference',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'DFC Sustainability Summitt',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'Net Zero Sumitt - Michigan',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'Carbon Positive or other',
-                    url: null,
-                    details: '',
-                },
-                {
-                    title: 'LFRT SDL meeting',
-                    url: null,
-                    details: '',
-                },
-            ],
+            anchor: this.$route.params.hash,
+            memberships: memberships,
+            conferences: conferences,
             windowWidth: window.innerWidth,
         }
     },
