@@ -1,13 +1,13 @@
 <template>
   <div>
-    <SectionHeader :title="tagline" />
-    <BottomBuffer style="margin-bottom: 40px;" />
-    <PictureCard :items="introPictureCards" />
+    <SideBySide :src="portrait" :text="tagline" />
+    <BottomBuffer style="margin-bottom: 60px;" />
+    <PictureCard id="about-me" :items="introPictureCards" />
 
     <div class="centered">
       <SectionHeader title="Recent Highlights" />
 
-      <MiniHeader title="TEDxFargo" />
+      <MiniHeader id="tedx-talk" title="TEDxFargo" />
       <iframe style="margin: 0 auto 20px auto;"
         data-aos="fade-in"
         data-aos-duration="2500"
@@ -22,8 +22,11 @@
         
       <BottomBuffer />
 
-      <MiniHeader title="Outstanding Contribution Award" />
-      <img src="outstanding-contribution-award.png" :width="windowWidth < 700 ? '70%' : '60%'" />
+      <MiniHeader id="featured-award" title="Outstanding Contribution Award" />
+      <img
+        src="outstanding-contribution-award.png"
+        :width="windowWidth < 700 ? '70%' : '60%'"
+      />
       <div class="links-list text-font">
         <a target="_blank" href="SCS_WORLDSBE-FINAL.pdf">View Article</a>
         <a target="_blank" href="WSBE-2024-SCS.pdf">View Presentation</a>
@@ -43,6 +46,7 @@ import PictureCard from '~/components/PictureCard.vue'
 import SectionHeader from '~/components/SectionHeader.vue'
 import BottomBuffer from '~/components/BottomBuffer.vue'
 import MiniHeader from '~/components/MiniHeader.vue';
+import SideBySide from '~/components/SideBySide.vue';
 
 export default {
   name: 'IndexPage',
@@ -68,7 +72,8 @@ export default {
     PictureCard,
     SectionHeader,
     BottomBuffer,
-    MiniHeader
+    MiniHeader,
+    SideBySide
   },
 
   data () {
@@ -79,7 +84,8 @@ export default {
           image: '/images/profile.jpg',
         },
       ],
-      tagline: 'Foresight Into the Future, Doing What Can\'t be Done',
+      portrait: 'images/patrick-portrait.jpeg',
+      tagline: 'Master Your Future Mindset, Do Your Undoable',
       tedTalkURL: 'https://www.youtube.com/embed/edmrxrdDePQ?si=JIS9tDKbKdcgxltg',
       windowWidth: window.innerWidth,
     }
@@ -89,6 +95,10 @@ export default {
 
 <style scoped>
 @import '~/assets/styles.css';
+
+html {
+  scroll-behavior: smooth;
+}
 
 .links-list {
   padding: 12px;
