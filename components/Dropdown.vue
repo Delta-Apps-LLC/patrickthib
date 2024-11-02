@@ -46,7 +46,7 @@
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <div class="load-buttons-wrapper">
+    <!-- <div class="load-buttons-wrapper">
       <v-btn class="load-more-btn main-font"
         @click="loadMoreItems()"
         text
@@ -58,7 +58,7 @@
         text
         :disabled="properList.length === items.length"
       >Load All</v-btn>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -77,8 +77,8 @@ export default {
   },
 
   mounted () {
+    this.showAllItems()
     if (this.anchor) {
-      this.showAllItems()
       this.$nextTick(() => {
         const el = document.getElementById(this.anchor)
         if (el) {

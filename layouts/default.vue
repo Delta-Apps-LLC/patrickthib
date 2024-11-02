@@ -105,7 +105,7 @@
       absolute
       app
     >
-      <span>&copy; 2023, Patrick Thibaudeau</span>
+      <span>&copy; {{ new Date().getFullYear() }}, All Rights Reserved</span>
       <v-spacer />
       <!-- <a target="_blank" href="resume.pdf">Full Resume</a> -->
       <div style="margin-right: 10px;"></div>

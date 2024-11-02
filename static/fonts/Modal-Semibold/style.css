@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Modal';
+    src: local('Modal Semi Bold'), local('Modal-Semi-Bold'),
+        url('Modal-Semibold.woff2') format('woff2'),
+        url('Modal-Semibold.woff') format('woff'),
+        url('Modal-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }

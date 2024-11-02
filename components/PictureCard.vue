@@ -147,11 +147,10 @@ export default {
 @import '~/assets/styles.css';
 
 .picture-card-row {
-    margin: 20px 0 20px 0;
+    margin: 30px 0;
 }
 
 .picture-card-even, .picture-card-odd {
-    max-width: 80%;
     background-color: #2b2b2b;
     padding: 15px;
     border-radius: 3px;
@@ -165,6 +164,7 @@ export default {
     .picture-card-even, .picture-card-odd {
         display: flex;
         flex-direction: column;
+        max-width: 90%;
     }
 
     .picture-card-text-even, .picture-card-text-odd {
@@ -185,12 +185,14 @@ export default {
     }
 
     .picture-card-even {
+        max-width: 80%;
         display: flex;
         flex-direction: row;
         margin-left: 115px;
     }
 
     .picture-card-odd {
+        max-width: 80%;
         display: flex;
         flex-direction: row;
         margin-right: 115px;

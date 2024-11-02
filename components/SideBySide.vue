@@ -2,12 +2,12 @@
     <div class="side-by-side">
         <div v-if="windowWidth >= 750" class="larger-screens">
             <div class="col">
-                <MainHeader :title="text" />
-                <div class="divider"></div>
-                <MiniHeader style="margin-top: 15px;" title="On this page:" />
+                <MainHeader />
+                <MiniHeader style="margin-top: 15px;" title="Quick Links" />
                 <div
                     data-aos="zoom-in"
                     data-aos-duration="1000"
+                    style="margin: -10px auto 15px auto;"
                 >
                     <a href="/#about-me">About Me</a>
                     <a href="/#tedx-talk">TEDx Talk</a>
@@ -21,24 +21,24 @@
 
         <div v-if="windowWidth < 750" class="smaller-screens">
             <div class="col section-header">
-                <MainHeader :title="text" />
+                <MainHeader />
             </div>
             <div class="col image-col">
                 <img :src="src" width="250" />
             </div>
             <div class="col">
-                <MiniHeader class="mini-header" title="On this page:" />
+                <MiniHeader style="margin-top: 15px;" title="Quick Links" />
                 <div
                     data-aos="zoom-in"
                     data-aos-duration="1000"
-                    style="display: flex; flex-direction: row; justify-content: center; margin: auto;"
+                    style="display: flex; flex-direction: row;
+                        justify-content: center; margin: -10px auto 15px auto;"
                 >
                     <a href="/#about-me">About Me</a>
                     <a href="/#tedx-talk">TEDx Talk</a>
                     <a href="/#featured-award">Featured Award</a>
                 </div>
             </div>
-            <div class="divider"></div>
         </div>
     </div>
 </template>
@@ -74,7 +74,6 @@ export default {
 
     props: {
         src: String,
-        text: String
     },
 }
 </script>
@@ -90,7 +89,7 @@ export default {
 }
 
 #portrait {
-    border-radius: 2px;
+    border-radius: 4px;
     min-width: 100px;
     max-width: 250px;
 }

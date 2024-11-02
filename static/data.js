@@ -126,7 +126,7 @@ export const employment = [
     title: 'Principal',
     subtitle: 'AResource | September 1991 - February 2001',
     details: 'Sole proprietor, principal responsible for business development, marketing, proposals, production, finances, maintaining client relationships. Grew business based on repeat work from clients and attracting new business for 10 years with multinational corporate clients as well as regional businesses.',
-    image: '/images/profile.jpg',
+    image: '/images/patrick-portrait-2.jpeg',
   },
   {
     id: '4h9tJbv0LVO9CVlh37',
