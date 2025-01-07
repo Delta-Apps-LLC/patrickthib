@@ -5,7 +5,7 @@
     <PictureCard id="about-me" :items="introPictureCards" />
 
     <div class="centered">
-      <SectionHeader title="Recent Highlights" />
+      <SectionHeader title="Top Highlights" />
 
       <MiniHeader id="tedx-talk" title="TEDxFargo" />
       <iframe style="margin: 0 auto 20px auto;"
@@ -19,6 +19,17 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+
+      <BottomBuffer />
+
+      <MiniHeader id="featured-magazine" title="Innovator Magazine" />
+      <img
+        src="innovator-magazine.jpeg"
+        :width="windowWidth < 700 ? '70%' : '60%'"
+      />
+      <div class="links-list text-font">
+        <a target="_blank" href="https://innovator-magazine.com/top-innovators-thought-leaders-from-all-over-the-globe/">View Article</a>
+      </div>
       
       <BottomBuffer />
 
