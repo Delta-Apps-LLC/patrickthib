@@ -11,6 +11,7 @@
                 >
                     <a href="/#about-me">About Me</a>
                     <a href="/#tedx-talk">TEDx Talk</a>
+                    <a href="/#featured-magazine">Innovator Magazine</a>
                     <a href="/#featured-award">Featured Award</a>
                 </div>
             </div>
@@ -31,11 +32,11 @@
                 <div
                     data-aos="zoom-in"
                     data-aos-duration="1000"
-                    style="display: flex; flex-direction: row;
-                        justify-content: center; margin: -10px auto 15px auto;"
+                    style="display: flex; flex-wrap: wrap; justify-content: center !important; margin: -10px auto 15px auto;"
                 >
                     <a href="/#about-me">About Me</a>
                     <a href="/#tedx-talk">TEDx Talk</a>
+                    <a href="/#featured-magazine">Innovator Magazine</a>
                     <a href="/#featured-award">Featured Award</a>
                 </div>
             </div>
