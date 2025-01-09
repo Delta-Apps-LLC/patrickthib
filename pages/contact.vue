@@ -1,7 +1,13 @@
 <template>
   <div>
     <div class="centered">
-      <SectionHeader title="Contact Me" />
+      <div class="title-row">
+        <v-icon class="phone-icon" color="transparent">mdi-phone</v-icon>
+        <SectionHeader title="Contact Me" />
+        <a target="_blank" href="tel:+1-(651)-303-7739">
+          <v-icon class="phone-icon" id="active-phone-icon">mdi-phone</v-icon>
+        </a>
+      </div>
       <div class="form-wrapper">
         <form class="main-white main-font"
           action="https://formspree.io/f/mvgopela"
@@ -101,14 +107,37 @@ export default {
 <style scoped>
 @import '~/assets/styles.css';
 
+.title-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center !important;
+  justify-content: space-between;
+}
+
+.phone-icon {
+  top: 16px;
+  padding: 10px;
+}
+
+#active-phone-icon {
+  color: #e1e1e1;
+}
+
+#active-phone-icon:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  border: solid #668297 1px;
+  border-radius: 50%;
+}
+
 @media (max-width: 600px) {
-  .form-wrapper {
+  .form-wrapper, .title-row {
     width: 90%;
   }
 }
 
 @media (min-width: 601px) {
-  .form-wrapper {
+  .form-wrapper, .title-row {
     width: 50%;
   }
 }
